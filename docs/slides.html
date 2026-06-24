@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&#22810;&#21151;&#33021;&#26234;&#33021;&#21161;&#25163;&#24179;&#21488; &middot; &#39033;&#30446;&#27719;&#25253;</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+  <style>
+    :root {
+      --accent: #6366f1;
+      --accent2: #10b981;
+      --warn: #f59e0b;
+    }
+    .reveal .slides section { text-align: left; }
+    .cover-title {
+      font-size: 2.4em; font-weight: 800;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #10b981);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; line-height: 1.2;
+    }
+    .cover-sub { font-size: 1.1em; color: #a1a1aa; margin-top: 0.4em; }
+    .cover-meta { font-size: 0.85em; color: #71717a; margin-top: 1.8em; }
+    .badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.72em; font-weight: 600; }
+    .badge-blue  { background: #1e3a5f; color: #60a5fa; }
+    .badge-green { background: #14532d; color: #4ade80; }
+    .badge-purple{ background: #2e1065; color: #c084fc; }
+    .badge-amber { background: #451a03; color: #fbbf24; }
+    .reveal table { font-size: 0.72em; width: 100%; border-collapse: collapse; }
+    .reveal table th { background: #27272a; color: #a1a1aa; padding: 8px 12px; text-align: left; font-weight: 600; }
+    .reveal table td { padding: 7px 12px; border-bottom: 1px solid #3f3f46; color: #e4e4e7; }
+    .reveal table tr:last-child td { border-bottom: none; }
+    .reveal table tr.highlight td { background: #1c1c2e; color: #a78bfa; font-weight: 600; }
+    .timeline { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; font-size: 0.78em; }
+    .tl-card { background: #18181b; border: 1px solid #3f3f46; border-radius: 10px; padding: 14px; }
+    .tl-date { font-size: 0.82em; color: #6366f1; font-weight: 700; }
+    .tl-title { font-weight: 700; margin: 4px 0; }
+    .tl-items { margin: 0; padding-left: 1em; color: #a1a1aa; font-size: 0.92em; }
+    .arch { font-family: monospace; font-size: 0.68em; background: #18181b; border-radius: 10px; padding: 20px; line-height: 1.7; color: #d4d4d8; white-space: pre; }
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-size: 0.78em; }
+    .feat-card { background: #18181b; border: 1px solid #3f3f46; border-radius: 10px; padding: 14px; }
+    .feat-label { font-size: 0.8em; color: #6366f1; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .feat-value { font-size: 1.05em; font-weight: 600; margin-top: 4px; }
+    .issue-list { font-size: 0.75em; list-style: none; padding: 0; }
+    .issue-list li { background: #18181b; border-left: 3px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 8px 14px; margin-bottom: 8px; display: flex; gap: 10px; align-items: baseline; }
+    .issue-list li.p1 { border-color: #ef4444; }
+    .issue-list li.p2 { border-color: #f59e0b; }
+    .issue-list li.p3 { border-color: #6366f1; }
+    .issue-badge { font-size: 0.8em; font-weight: 700; min-width: 26px; }
+    .section-header { font-size: 0.75em; color: #6366f1; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5em; border-bottom: 1px solid #3f3f46; padding-bottom: 6px; }
+    .contrib-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 0.78em; }
+    .contrib-card { background: #18181b; border: 1px solid #3f3f46; border-radius: 10px; padding: 14px; text-align: center; }
+    .contrib-avatar { width: 48px; height: 48px; background: linear-gradient(135deg, #6366f1, #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4em; margin: 0 auto 8px; }
+    .contrib-name { font-weight: 700; }
+    .contrib-role { font-size: 0.85em; color: #a1a1aa; margin-top: 4px; }
+    .highlight-box { background: linear-gradient(135deg, #1e1b4b, #0f172a); border: 1px solid #6366f1; border-radius: 12px; padding: 16px 20px; font-size: 0.82em; }
+    .reveal h2 { font-size: 1.3em; }
+    .reveal ul  { font-size: 0.82em; }
+    .reveal li  { margin-bottom: 6px; }
+    .text-center { text-align: center; }
+    .mt1 { margin-top: 0.6em; }
+    .mt2 { margin-top: 1.2em; }
+    .green { color: #4ade80; }
+    .amber { color: #fbbf24; }
+    .purple { color: #c084fc; }
+    .dim   { color: #71717a; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- PAGE 1: &#23553;&#38754; -->
+    <section>
+      <div style="padding-top: 1.5em;">
+        <p class="cover-sub">&#128230; &#39033;&#30446;&#27719;&#25253;</p>
+        <h1 class="cover-title">&#22810;&#21151;&#33021;&#26234;&#33021;&#21161;&#25163;&#24179;&#21488;</h1>
+        <p class="cover-sub">AI Tools Demo &middot; &#19968;&#21608;&#20132;&#20184;</p>
+        <div class="cover-meta">
+          <table style="font-size:1em; width:auto; margin-top:1em;">
+            <tr>
+              <td style="color:#71717a; padding-right:24px;">&#25216;&#26415;&#26632;</td>
+              <td>
+                <span class="badge badge-purple">Next.js 16</span>
+                <span class="badge badge-blue" style="margin-left:6px;">Tailwind CSS</span>
+                <span class="badge badge-green" style="margin-left:6px;">Groq API</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="color:#71717a; padding-right:24px; padding-top:8px;">&#20132;&#20184;&#26085;&#26399;</td>
+              <td style="padding-top:8px;">2026-06-24&#65288;&#21608;&#19977;&#65289;</td>
+            </tr>
+            <tr>
+              <td style="color:#71717a; padding-right:24px; padding-top:8px;">&#24037;&#20855;&#25968;&#37327;</td>
+              <td style="padding-top:8px;">2 &#20010;&#65288;PDF &#27010;&#25324; &middot; &#25991;&#26696;&#29983;&#25104;&#65289;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: &#39033;&#30446;&#32972;&#26223; -->
+    <section>
+      <h2>&#39033;&#30446;&#32972;&#26223;</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:0.8em;">
+        <div>
+          <p class="section-header">&#30446;&#26631;</p>
+          <ul>
+            <li>&#23436;&#25104;&#21487;&#28436;&#31034;&#30340; <strong>AI &#24037;&#20855;&#38598; Demo</strong></li>
+            <li>&#30041;&#19979; <strong>&#26694;&#26550;&#36873;&#22411;&#35828;&#26126;</strong>&#65288;FRAMEWORK.md&#65289;</li>
+            <li>&#25972;&#29702; <strong>&#25552;&#31034;&#35789;&#38598;&#21512;</strong>&#65288;prompts/&#65289;</li>
+            <li>&#32534;&#20889; <strong>&#27979;&#35797;&#28165;&#21333;</strong>&#65288;TEST-CHECKLIST.md&#65289;</li>
+          </ul>
+        </div>
+        <div>
+          <p class="section-header">&#32422;&#26463;</p>
+          <ul>
+            <li>&#19968;&#21608;&#20869;&#23436;&#25104;&#65292;&#20154;&#21592; 3-4 &#21517;</li>
+            <li>&#20351;&#29992; <strong>&#20813;&#36153; API</strong>&#65288;Groq &#20813;&#36153;&#37197;&#39069;&#65289;</li>
+            <li>&#26368;&#32456;&#37096;&#32626;&#30446;&#26631;&#65306;<strong>&#20113;&#25928;&#65288;&#38463;&#37324; DevOps&#65289;</strong></li>
+            <li>&#20195;&#30721;&#20860;&#23481; GitHub &#21327;&#20316;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt2">
+        <p class="section-header">&#19968;&#21608;&#26085;&#31243;</p>
+        <div class="timeline">
+          <div class="tl-card"><div class="tl-date">6/23 &#21608;&#20108;</div><div class="tl-title">&#26694;&#26550;&#36873;&#22411;</div><ul class="tl-items"><li>&#27604;&#36739;&#20505;&#36873;&#26694;&#26550;</li><li>&#30830;&#35748;&#25216;&#26415;&#26632;</li></ul></div>
+          <div class="tl-card"><div class="tl-date">6/24 &#21608;&#19977;</div><div class="tl-title">&#21151;&#33021;&#24320;&#21457;</div><ul class="tl-items"><li>PDF &#27010;&#25324;</li><li>&#25991;&#26696;&#29983;&#25104;</li></ul></div>
+          <div class="tl-card"><div class="tl-date">6/25 &#21608;&#22235;</div><div class="tl-title">&#38598;&#25104;&#27979;&#35797;</div><ul class="tl-items"><li>&#21512;&#24182;&#21151;&#33021;</li><li>&#34917; README</li></ul></div>
+          <div class="tl-card"><div class="tl-date">6/26 &#21608;&#20116;</div><div class="tl-title">&#28436;&#31034;&#39564;&#25910;</div><ul class="tl-items"><li>PM &#32452;&#32455;&#28436;&#31034;</li><li>&#21508;&#20154;&#35828;&#26126;&#36129;&#29486;</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: &#26694;&#26550;&#36873;&#22411; -->
+    <section>
+      <h2>&#26694;&#26550;&#36873;&#22411;</h2>
+      <p class="dim" style="font-size:0.8em; margin-top:-0.4em;">&#22235;&#20010;&#20505;&#36873;&#26041;&#26696;&#23545;&#27604;</p>
+      <table class="mt1">
+        <thead><tr><th>&#26694;&#26550;</th><th>&#35821;&#35328;</th><th>&#20248;&#28857;</th><th>&#32570;&#28857;</th><th>&#36866;&#21512;&#22330;&#26223;</th></tr></thead>
+        <tbody>
+          <tr class="highlight"><td>&#9989; <strong>Next.js 16</strong></td><td>TypeScript</td><td>&#20840;&#26632;&#12289;API Routes&#12289;&#28909;&#37325;&#36733;</td><td>&#23398;&#20064;&#25104;&#26412;&#30053;&#39640;</td><td>&#29983;&#20135;&#32423; Web &#24212;&#29992;</td></tr>
+          <tr><td>Streamlit</td><td>Python</td><td>&#26497;&#31616;&#12289;&#25968;&#25454;&#31185;&#23398;&#21451;&#22909;</td><td>&#26679;&#24335;&#24046;&#12289;&#38590;&#23450;&#21046;</td><td>&#24555;&#36895;&#21407;&#22411; / &#25968;&#25454;&#21487;&#35270;&#21270;</td></tr>
+          <tr><td>Gradio</td><td>Python</td><td>ML Demo &#19968;&#38190;&#21457;&#24067;</td><td>UI &#22266;&#23450;&#12289;&#25193;&#23637;&#24615;&#24046;</td><td>&#27169;&#22411;&#23637;&#31034;&#39029;</td></tr>
+          <tr><td>Flask + HTML</td><td>Python</td><td>&#28789;&#27963;&#12289;&#36731;&#37327;</td><td>&#21069;&#31471;&#38656;&#25163;&#20889;&#12289;&#26080;&#24037;&#20855;&#38142;</td><td>&#31616;&#21333; API &#21518;&#31471;</td></tr>
+        </tbody>
+      </table>
+      <div class="mt2">
+        <p class="section-header">&#36873;&#25321; Next.js &#30340;&#20851;&#38190;&#29702;&#30001;</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; font-size:0.76em;">
+          <div class="highlight-box"><div style="color:#818cf8; font-weight:700; margin-bottom:6px;">&#128274; &#23433;&#20840;</div>API Key &#22312;&#26381;&#21153;&#31471;&#65292;&#19981;&#26292;&#38706;&#32473;&#27983;&#35272;&#22120;</div>
+          <div class="highlight-box"><div style="color:#34d399; font-weight:700; margin-bottom:6px;">&#9889; &#27969;&#24335;&#36755;&#20986;</div>&#20869;&#32622; Web Streaming API&#65292;&#25903;&#25345; SSE &#23454;&#26102;&#28210;&#26579;</div>
+          <div class="highlight-box"><div style="color:#f472b6; font-weight:700; margin-bottom:6px;">&#128640; &#37096;&#32626;</div>Vercel / &#20113;&#25928;&#22343;&#21487;&#19968;&#38190;&#37096;&#32626;&#65292;Docker &#20860;&#23481;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: &#26550;&#26500;&#22270; -->
+    <section>
+      <h2>&#31995;&#32479;&#26550;&#26500;</h2>
+      <div class="arch">+----------------------------------------------------------+
+|                   &#27983;&#35272;&#22120;&#65288;&#29992;&#25143;&#65289;                        |
+|  PDF &#25991;&#20214;&#19978;&#20256; / &#34920;&#21333;&#22635;&#20889;  --&gt;  Next.js &#21069;&#31471;&#65288;React&#65289;      |
+|  SSE &#27969;&#24335;&#25509;&#25910; &lt;--------------  &#23454;&#26102;&#28210;&#26579;&#36827;&#24230; + Token       |
++-------------------------+--------------------------------+
+                          | HTTPS POST / SSE
++-------------------------v--------------------------------+
+|          Next.js API Routes&#65288;Node.js &#26381;&#21153;&#31471;&#65289;            |
+|                                                          |
+|  POST /api/pdf-summary                                   |
+|    1. &#26657;&#39564;&#25991;&#20214;&#26684;&#24335; &amp; &#22823;&#23567;&#65288;&#21069; 10MB&#65289;                    |
+|    2. pdf-parse &#25552;&#21462;&#25991;&#23383;&#23618;&#65288;&#21069; 12000 &#23383;&#31526;&#65289;               |
+|    3. &#26500;&#24314; Prompt -&gt; &#35843;&#29992; Groq API&#65288;&#27969;&#24335;&#65289;               |
+|    4. &#36880; token &#36716;&#21457;&#20026; SSE &#20107;&#20214;                           |
+|                                                          |
+|  POST /api/copy-writer                                   |
+|    1. &#26657;&#39564;&#24517;&#22635;&#23383;&#27573;                                       |
+|    2. &#26500;&#24314;&#19977;&#39118;&#26684; Prompt -&gt; Groq API                      |
+|    3. &#35299;&#26512; JSON -&gt; &#36820;&#22238;&#19977;&#29256;&#25991;&#26696;                           |
++-------------------------+--------------------------------+
+                          | HTTPS&#65288;OpenAI &#20860;&#23481;&#21327;&#35758;&#65289;
++-------------------------v--------------------------------+
+|           Groq Cloud&#65288;AI &#25512;&#29702;&#26381;&#21153;&#65289;                      |
+|           &#27169;&#22411;&#65306;llama-3.3-70b-versatile                  |
+|           &#36895;&#24230;&#65306;~500 token/s&#65292;&#20813;&#36153;&#37197;&#39069;                    |
++----------------------------------------------------------+</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.73em; margin-top:12px;">
+        <div class="highlight-box"><span style="color:#818cf8; font-weight:700;">PDF &#35299;&#26512;</span>&#65306;pdf-parse@1.1.1&#65292;&#32431; Node &#36816;&#34892;&#65292;&#26080;&#27983;&#35272;&#22120; API &#20381;&#36182;</div>
+        <div class="highlight-box"><span style="color:#34d399; font-weight:700;">&#38169;&#35823;&#22788;&#29702;</span>&#65306;lib/api-error.ts &#32479;&#19968;&#23558; AI &#38169;&#35823;&#32763;&#35793;&#20026;&#20013;&#25991;&#24314;&#35758;</div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: &#24037;&#20855;&#28436;&#31034; PDF &#27010;&#25324; -->
+    <section>
+      <h2>&#24037;&#20855;&#28436;&#31034; &middot; PDF &#27010;&#25324;</h2>
+      <div class="feat-grid mt1">
+        <div class="feat-card">
+          <div class="feat-label">&#26680;&#24515;&#21151;&#33021;</div>
+          <ul style="margin:8px 0 0; padding-left:1.2em; color:#e4e4e7;">
+            <li>&#19978;&#20256; PDF -&gt; AI &#33258;&#21160;&#35299;&#35835;</li>
+            <li>&#25552;&#21462;&#65306;&#26680;&#24515;&#20027;&#26088; / &#20851;&#38190;&#35201;&#28857; / &#35814;&#32454;&#25688;&#35201;</li>
+            <li>&#26631;&#27880;&#65306;&#25991;&#26723;&#31867;&#22411; / &#38405;&#35835;&#38590;&#24230; / &#36866;&#21512;&#35835;&#32773;</li>
+          </ul>
+        </div>
+        <div class="feat-card">
+          <div class="feat-label">&#9889; &#27969;&#24335;&#36755;&#20986;&#20142;&#28857;</div>
+          <ul style="margin:8px 0 0; padding-left:1.2em; color:#e4e4e7;">
+            <li>SSE &#23454;&#26102;&#25512;&#36865;&#65292;&#36880;&#23383;&#26174;&#31034;</li>
+            <li>&#35299;&#26512;&#20013; / AI &#20998;&#26512;&#20013; / &#23436;&#25104; &#19977;&#38454;&#27573;&#36827;&#24230;</li>
+            <li>&#26080;&#38656;&#31561;&#24453;&#20840;&#37096;&#23436;&#25104;&#21363;&#21487;&#38405;&#35835;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt2">
+        <p class="section-header">&#36793;&#30028;&#20540;&#32422;&#26463;</p>
+        <table>
+          <thead><tr><th>&#32500;&#24230;</th><th>&#38480;&#21046;</th><th>&#36229;&#20986;&#34892;&#20026;</th></tr></thead>
+          <tbody>
+            <tr><td>&#25991;&#20214;&#26684;&#24335;</td><td>&#20165; .pdf</td><td>HTTP 400</td></tr>
+            <tr><td>&#25991;&#20214;&#22823;&#23567;</td><td>&#26368;&#22823; 10 MB</td><td>HTTP 400</td></tr>
+            <tr><td>&#25991;&#23383;&#23618;&#35201;&#27714;</td><td>&#33267;&#23569; 50 &#23383;&#31526;</td><td>HTTP 422&#65288;&#22270;&#29255;&#29256; PDF &#19981;&#25903;&#25345;&#65289;</td></tr>
+            <tr><td>&#20998;&#26512;&#25991;&#26412;&#37327;</td><td>&#21069; 12,000 &#23383;&#31526;</td><td>&#36229;&#20986;&#37096;&#20998;&#38745;&#40664;&#25130;&#26029;</td></tr>
+            <tr><td>&#25688;&#35201;&#23383;&#25968;</td><td>300-500 &#20013;&#25991;&#23383;</td><td>AI &#25511;&#21046;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PAGE 6: &#24037;&#20855;&#28436;&#31034; &#25991;&#26696;&#29983;&#25104; -->
+    <section>
+      <h2>&#24037;&#20855;&#28436;&#31034; &middot; &#25991;&#26696;&#29983;&#25104;</h2>
+      <div class="feat-grid mt1">
+        <div class="feat-card">
+          <div class="feat-label">&#36755;&#20837;&#23383;&#27573;</div>
+          <ul style="margin:8px 0 0; padding-left:1.2em; color:#e4e4e7;">
+            <li><strong>&#20135;&#21697;&#21517;&#31216;</strong>&#65288;&#24517;&#22635;&#65292;2-20 &#23383;&#65289;</li>
+            <li><strong>&#20135;&#21697;&#25551;&#36848;</strong>&#65288;&#24517;&#22635;&#65292;20-300 &#23383;&#65289;</li>
+            <li>&#30446;&#26631;&#21463;&#20247;&#65288;&#36873;&#22635;&#65289;</li>
+            <li>&#26680;&#24515;&#21334;&#28857;&#65288;&#36873;&#22635;&#65292;&#36887;&#21495;&#20998;&#38548;&#65289;</li>
+          </ul>
+        </div>
+        <div class="feat-card">
+          <div class="feat-label">&#19968;&#27425;&#29983;&#25104;&#19977;&#31181;&#39118;&#26684;</div>
+          <ul style="margin:8px 0 0; padding-left:1.2em; color:#e4e4e7;">
+            <li>&#127970; <strong>&#27491;&#24335;&#19987;&#19994;</strong>&#65306;&#23448;&#32593; / &#26032;&#38395;&#31295; / B2B</li>
+            <li>&#10024; <strong>&#27963;&#27900;&#26377;&#36259;</strong>&#65306;&#24494;&#21338; / &#26379;&#21451;&#22280;</li>
+            <li>&#127807; <strong>&#31181;&#33609;&#23433;&#21033;</strong>&#65306;&#23567;&#32418;&#20070; / &#25238;&#38899;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt2">
+        <p class="section-header">&#25552;&#31034;&#35789;&#35774;&#35745;&#24605;&#36335;</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; font-size:0.74em;">
+          <div class="highlight-box"><div style="color:#f472b6; font-weight:700; margin-bottom:4px;">&#36755;&#20986;&#26684;&#24335;&#22266;&#23450;</div>JSON &#23545;&#35937;&#65292;&#19977;&#20010; key &#23545;&#24212;&#19977;&#31181;&#39118;&#26684;&#65292;&#21069;&#31471;&#30452;&#25509;&#35299;&#26512;&#28210;&#26579;</div>
+          <div class="highlight-box"><div style="color:#fbbf24; font-weight:700; margin-bottom:4px;">&#23383;&#25968;&#20005;&#26684;&#32422;&#26463;</div>&#26631;&#39064; &le;15 &#23383;&#65292;&#27491;&#25991; 80-120 &#23383;&#65292;CTA &le;10 &#23383;</div>
+          <div class="highlight-box"><div style="color:#34d399; font-weight:700; margin-bottom:4px;">&#39640;&#21019;&#24847;&#24230;</div>Temperature=0.8&#65292;&#27599;&#27425;&#29983;&#25104;&#32467;&#26524;&#19981;&#21516;&#65292;&#24314;&#35758;&#22810;&#27425;&#36873;&#20248;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7: &#27979;&#35797;&#19982;&#36136;&#37327; -->
+    <section>
+      <h2>&#27979;&#35797;&#19982;&#36136;&#37327;</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:0.8em;">
+        <div>
+          <p class="section-header">&#33258;&#21160;&#21270;&#27979;&#35797;&#65288;Vitest&#65289;</p>
+          <div class="feat-grid" style="grid-template-columns:1fr 1fr; gap:10px;">
+            <div class="feat-card" style="text-align:center;"><div style="font-size:2em; font-weight:800; color:#4ade80;">53</div><div style="font-size:0.8em; color:#a1a1aa;">&#27979;&#35797;&#29992;&#20363;</div></div>
+            <div class="feat-card" style="text-align:center;"><div style="font-size:2em; font-weight:800; color:#60a5fa;">4</div><div style="font-size:0.8em; color:#a1a1aa;">&#27979;&#35797;&#25991;&#20214;</div></div>
+          </div>
+          <div style="font-size:0.75em; margin-top:10px; color:#a1a1aa;">
+            <div>&bull; <code>unit/api-error.test.ts</code>&#65306;&#38169;&#35823;&#32763;&#35793;&#35206;&#30422;</div>
+            <div>&bull; <code>unit/pdf-parse.test.ts</code>&#65306;PDF &#35299;&#26512;&#39564;&#35777;</div>
+            <div>&bull; <code>integration/pdf-summary-api.test.ts</code>&#65306;SSE &#27969;</div>
+            <div>&bull; <code>integration/copy-writer-api.test.ts</code>&#65306;&#25991;&#26696; JSON</div>
+          </div>
+        </div>
+        <div>
+          <p class="section-header">&#25163;&#21160;&#27979;&#35797;&#28165;&#21333;&#65288;TEST-CHECKLIST.md&#65289;</p>
+          <ul style="font-size:0.75em; margin-top:0;">
+            <li>PDF &#27010;&#25324;&#65306;&#27491;&#24120;&#27969;&#31243; / &#24322;&#24120;&#25991;&#20214; / &#36793;&#30028;&#22823;&#23567;</li>
+            <li>&#25991;&#26696;&#29983;&#25104;&#65306;&#24517;&#22635; / &#36873;&#22635; / &#19977;&#39118;&#26684;&#36755;&#20986;</li>
+            <li>&#38169;&#35823;&#22330;&#26223;&#65306;&#26080;&#25928; Key / &#37197;&#39069;&#32791;&#23613; / &#36229;&#26102;</li>
+            <li>UI / UX&#65306;&#27969;&#24335;&#36827;&#24230; / &#22797;&#21046;&#25353;&#38062; / &#31227;&#21160;&#31471;</li>
+            <li>&#23433;&#20840;&#65306;API Key &#19981;&#26292;&#38706; / &#25991;&#20214;&#19978;&#20256;&#38480;&#21046;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt1">
+        <p class="section-header">&#36816;&#34892;&#27979;&#35797;</p>
+        <div class="arch" style="font-size:0.72em; padding:12px 16px;">npm run test          # &#21333;&#27425;&#36816;&#34892;&#25152;&#26377;&#27979;&#35797;
+npm run test:watch    # &#30417;&#21548;&#27169;&#24335;
+npm run test:coverage # &#29983;&#25104;&#35206;&#30422;&#29575;&#25253;&#21578;</div>
+      </div>
+    </section>
+
+    <!-- PAGE 8: &#24635;&#32467; &amp; &#21518;&#32493; -->
+    <section>
+      <h2>&#24635;&#32467; &amp; &#21518;&#32493;</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:0.8em; font-size:0.78em;">
+        <div>
+          <p class="section-header">&#24050;&#30693;&#38382;&#39064;&#65288;TOP 3&#65289;</p>
+          <ul class="issue-list">
+            <li class="p1"><span class="issue-badge" style="color:#ef4444;">P1</span><span>Groq &#20813;&#36153;&#37197;&#39069;&#32791;&#23613;&#21518;&#26080;&#38477;&#32423;&#26041;&#26696;&#65292;&#21151;&#33021;&#23436;&#20840;&#19981;&#21487;&#29992;</span></li>
+            <li class="p2"><span class="issue-badge" style="color:#f59e0b;">P2</span><span>&#25195;&#25551;&#29256; PDF&#65288;&#22270;&#29255;&#22411;&#65289;&#26080;&#27861;&#25552;&#21462;&#25991;&#23383;&#65292;&#38656;&#25509;&#20837; OCR</span></li>
+            <li class="p2"><span class="issue-badge" style="color:#f59e0b;">P2</span><span>&#36229; 12000 &#23383;&#25991;&#26723;&#21482;&#20998;&#26512;&#21069;&#21322;&#37096;&#20998;&#65292;&#38656;&#20998;&#27573; Map-Reduce</span></li>
+          </ul>
+          <p class="section-header mt1">&#19979;&#19968;&#27493;&#20248;&#21270;&#26041;&#21521;</p>
+          <ul style="font-size:0.9em;">
+            <li>&#25509;&#20837; OCR &#25903;&#25345;&#25195;&#25551;&#29256; PDF</li>
+            <li>&#37197;&#32622; API Key &#27744;&#33258;&#21160;&#20999;&#25442;</li>
+            <li>localStorage &#25345;&#20037;&#21270;&#25991;&#26696;&#21382;&#21490;</li>
+            <li>&#25903;&#25345; Word / TXT &#31561;&#26356;&#22810;&#26684;&#24335;</li>
+          </ul>
+        </div>
+        <div>
+          <p class="section-header">&#36129;&#29486;&#32773;&#20998;&#24037;</p>
+          <div class="contrib-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="contrib-card"><div class="contrib-avatar">&#128100;</div><div class="contrib-name">&#25104;&#21592; A</div><div class="contrib-role">PDF &#27010;&#25324; / SSE &#27969;&#24335; / &#26694;&#26550;&#25645;&#24314;</div></div>
+            <div class="contrib-card"><div class="contrib-avatar">&#128100;</div><div class="contrib-name">&#25104;&#21592; B</div><div class="contrib-role">&#25991;&#26696;&#29983;&#25104; / &#25552;&#31034;&#35789;&#35774;&#35745; / UI</div></div>
+            <div class="contrib-card"><div class="contrib-avatar">&#128100;</div><div class="contrib-name">&#25104;&#21592; C</div><div class="contrib-role">&#27979;&#35797;&#28165;&#21333; / &#25991;&#26723;&#25972;&#29702; / &#38598;&#25104;</div></div>
+            <div class="contrib-card"><div class="contrib-avatar">&#128100;</div><div class="contrib-name">&#25104;&#21592; D</div><div class="contrib-role">&#37096;&#32626; / &#27719;&#25253; PPT / PM &#21327;&#35843;</div></div>
+          </div>
+          <div class="highlight-box mt1" style="text-align:center;">
+            <div style="font-size:1em; font-weight:700; color:#818cf8;">&#127881; &#39033;&#30446;&#24050;&#23436;&#25104;&#22522;&#30784;&#20132;&#20184;</div>
+            <div style="font-size:0.85em; color:#a1a1aa; margin-top:6px;">&#20195;&#30721;&#24050;&#25512;&#36865; GitHub &middot; &#37096;&#32626; Vercel &#21487;&#19968;&#38190;&#23436;&#25104;</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    center: false,
+    slideNumber: 'c/t',
+    width: 1100,
+    height: 680,
+    margin: 0.04,
+  });
+</script>
+</body>
+</html>
